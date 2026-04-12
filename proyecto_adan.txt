@@ -1,0 +1,147 @@
+
+
+
+
+
+
+pip install django djangorestframework django-cors-headers requests
+
+django-admin startproject adan_project_django .
+
+
+python manage.py startapp core
+
+
+
+echo "# mihorariosalat" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/msbwindmark-cloud/mihorariosalat.git
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+mkdir proyecto-oracion && cd proyecto-oracion
+
+mkdir backend && cd backend
+
+python -m venv venv
+
+.\venv\Scripts\activate
+
+pip install fastapi uvicorn requests flask-cors
+
+python.exe -m pip install --upgrade pip
+
+# Entra a la carpeta backend
+cd backend
+
+# Crea la estructura de carpetas (el -p crea carpetas anidadas)
+mkdir -p app/services app/api
+
+# Crea los archivos vacíos (usamos 'type nul >' en Windows para crear archivos)
+type nul > app/__init__.py
+type nul > app/main.py
+type nul > app/services/__init__.py
+type nul > app/services/prayer_service.py
+type nul > app/api/__init__.py
+type nul > app/api/endpoints.py
+
+
+
+New-Item -ItemType Directory -Path "app/services", "app/api" -Force
+
+
+New-Item -ItemType File -Path "app/__init__.py", "app/main.py", "app/services/__init__.py", "app/services/prayer_service.py", "app/api/__init__.py", "app/api/endpoints.py" -Force
+
+
+fastapi
+uvicorn
+requests
+
+
+pip install -r requirements.txt
+
+python -m app.main
+
+
+# Ve a la carpeta frontend
+cd frontend
+
+# Instala las librerías necesarias para el diseño y el audio
+npm install axios sweetalert2 lucide-react moment moment-hijri
+
+
+# Esto crea la carpeta 'frontend' con toda la estructura base
+npm create vite@latest frontend -- --template react
+
+cd frontend
+npm install
+npm install axios sweetalert2 moment moment-hijri
+
+# Primero borra la carpeta node_modules para limpiar errores previos
+Remove-Item -Recurse -Force node_modules, package-lock.json
+
+# Instala TODO de nuevo basándose en tu package.json
+npm install
+
+los pasos correctos
+
+
+# Crea la carpeta frontend físicamente
+mkdir frontend
+# Entra en ella
+cd frontend
+# Inicializa Vite directamente AQUÍ (en el punto .)
+npm create vite@latest . -- --template react
+
+# Instala React base
+npm install
+
+# Instala las librerías del proyecto
+npm install axios sweetalert2 moment moment-hijri
+
+
+
+
+python -m app.main
+
+
+
+npm run dev
+
+
+
+
+
+@echo off
+title Lanzador de Aplicacion de Oracion
+echo Arrancando el Backend...
+start /b cmd /c "cd backend && venv\Scripts\activate && python -m app.main"
+
+echo Esperando un momento...
+timeout /t 3
+
+echo Arrancando el Frontend...
+start /b cmd /c "cd frontend && npm run dev"
+
+echo Abriendo el navegador...
+timeout /t 5
+start http://localhost:5173
+
+
+
+
+
+
+
