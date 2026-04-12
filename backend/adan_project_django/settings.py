@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#*&)*j@3za^-2mrq-641x06znki$svhfd-vnw1d6f+r4n3mn+i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mihorariosalat.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -56,6 +56,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'adan_project_django.urls'
+
+# Configuración de CORS
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://mihorariosalat.pythonanywhere.com", # Tu frontend en producción
+]
 
 CORS_ALLOW_ALL_ORIGINS = True # Equivalente a allow_origins=["*"]
 

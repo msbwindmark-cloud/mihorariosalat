@@ -206,15 +206,20 @@ const App = () => {
   // 1. Cargar datos del Backend
   useEffect(() => {
     const fetchData = async () => {
+      // Detecta si estás en local o en producción
+      const API_BASE_URL =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+          ? "http://127.0.0.1:8000"
+          : "https://mihorariosalat.pythonanywhere.com";
+
       try {
         const res = await axios.get(
-          `http://127.0.0.1:8000/api/schedule?city=${city}&country=${country}`
+          `${API_BASE_URL}/api/schedule?city=${city}&country=${country}`
         );
 
-        // BUSCA ESTE BLOQUE Y DÉJALO ASÍ:
         if (res.data && res.data.timings) {
           setTimes(res.data.timings);
-          // Borramos la línea de setHijriDate de aquí
         }
       } catch (err) {
         console.error("Error al obtener datos:", err);

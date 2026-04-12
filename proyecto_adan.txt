@@ -23,11 +23,11 @@ git push -u origin main
 
 
 
+/home/mihorariosalat/mihorariosalat/frontend/dist
 
 
 
-
-
+https://mihorariosalat.pythonanywhere.com/
 
 
 
