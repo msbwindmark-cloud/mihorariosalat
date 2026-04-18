@@ -31,15 +31,61 @@ const App = () => {
   const [city, setCity] = useState("Seville");
   const [country, setCountry] = useState("Spain");
 
+  // const cities = [
+  //   { name: "Sevilla", val: "Seville", country: "Spain" },
+  //   { name: "Madrid", val: "Madrid", country: "Spain" },
+  //   { name: "Granada", val: "Granada", country: "Spain" },
+  //   { name: "Málaga", val: "Malaga", country: "Spain" },
+  //   { name: "Córdoba", val: "Cordoba", country: "Spain" },
+  //   { name: "Tánger", val: "Tangier", country: "Morocco" },
+  //   { name: "Casablanca", val: "Casablanca", country: "Morocco" },
+  //   { name: "Tetuán", val: "Tetouan", country: "Morocco" },
+  // ];
+
   const cities = [
+    // España
     { name: "Sevilla", val: "Seville", country: "Spain" },
     { name: "Madrid", val: "Madrid", country: "Spain" },
     { name: "Granada", val: "Granada", country: "Spain" },
     { name: "Málaga", val: "Malaga", country: "Spain" },
     { name: "Córdoba", val: "Cordoba", country: "Spain" },
+    { name: "Barcelona", val: "Barcelona", country: "Spain" },
+    { name: "Valencia", val: "Valencia", country: "Spain" },
+    { name: "Bilbao", val: "Bilbao", country: "Spain" },
+
+    // Marruecos
     { name: "Tánger", val: "Tangier", country: "Morocco" },
     { name: "Casablanca", val: "Casablanca", country: "Morocco" },
     { name: "Tetuán", val: "Tetouan", country: "Morocco" },
+    { name: "Rabat", val: "Rabat", country: "Morocco" },
+    { name: "Kenitra", val: "Kenitra", country: "Morocco" },
+    { name: "Fez", val: "Fes", country: "Morocco" },
+    { name: "Marrakech", val: "Marrakesh", country: "Morocco" },
+    { name: "Agadir", val: "Agadir", country: "Morocco" },
+    { name: "Esauira", val: "Essaouira", country: "Morocco" },
+    { name: "Mequinez", val: "Meknes", country: "Morocco" },
+    { name: "Oujda", val: "Oujda", country: "Morocco" },
+
+    // Francia
+    { name: "París", val: "Paris", country: "France" },
+    { name: "Marsella", val: "Marseille", country: "France" },
+    { name: "Lyon", val: "Lyon", country: "France" },
+    { name: "Burdeos", val: "Bordeaux", country: "France" },
+    { name: "Niza", val: "Nice", country: "France" },
+
+    // Estados Unidos
+    { name: "Nueva York", val: "New York", country: "USA" },
+    { name: "Los Ángeles", val: "Los Angeles", country: "USA" },
+    { name: "Chicago", val: "Chicago", country: "USA" },
+    { name: "Miami", val: "Miami", country: "USA" },
+    { name: "San Francisco", val: "San Francisco", country: "USA" },
+
+    // Inglaterra
+    { name: "Londres", val: "London", country: "United Kingdom" },
+    { name: "Mánchester", val: "Manchester", country: "United Kingdom" },
+    { name: "Liverpool", val: "Liverpool", country: "United Kingdom" },
+    { name: "Birmingham", val: "Birmingham", country: "United Kingdom" },
+    { name: "Bristol", val: "Bristol", country: "United Kingdom" },
   ];
 
   // Referencia al audio (asegúrate que el nombre en public coincida)
@@ -212,7 +258,7 @@ const App = () => {
         window.location.hostname === "127.0.0.1"
           ? "http://127.0.0.1:8000"
           : "https://mihorariosalat.pythonanywhere.com";
-      
+
       try {
         const res = await axios.get(
           `${API_BASE_URL}/api/schedule?city=${city}&country=${country}`
